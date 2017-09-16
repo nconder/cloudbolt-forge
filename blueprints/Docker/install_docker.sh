@@ -27,7 +27,7 @@ if [ $is_ubuntu -eq 0 ]; then
     id -nG
     # Add additional user to Docker group
     usermod -aG docker ocadmin
-    reboot now
+    #reboot now
 else
         echo "Sorry this script is for Ubuntu only." 
 fi
