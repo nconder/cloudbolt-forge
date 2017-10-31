@@ -1,7 +1,9 @@
 #!/bin/sh
+# Check for python
+
+apt-get install python
 
 # This automates the installation of Docker stable.
-
 python -mplatform | grep -qi ubuntu
 is_ubuntu=$?
 
@@ -26,8 +28,7 @@ if [ $is_ubuntu -eq 0 ]; then
     su - ${USER}
     id -nG
     # Add additional user to Docker group
-    usermod -aG docker ocadmin
-    #reboot now
+    #usermod -aG docker <<user>>
 else
-        echo "Sorry this script is for Ubuntu only." 
+        echo "Sorry this is for Ubuntu only." 
 fi
